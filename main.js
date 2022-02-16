@@ -1,6 +1,6 @@
 import './style.css';
 import * as THREE from 'three';
-// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 // Setup
 
@@ -35,6 +35,9 @@ pointLight.position.set(5, 5, 10);
 const ambientLight = new THREE.AmbientLight(0xffffff);
 scene.add(pointLight, ambientLight);
 
+const lightHelper = new THREE.PointLightHelper(pointLight)
+const gridHelper = new THREE.GridHelper(200, 50)
+const controls = new OrbitControls(camera, renderer.domElement)
 
 function addStar() {
   const geometry = new THREE.IcosahedronGeometry(0.1, 60, 24)
