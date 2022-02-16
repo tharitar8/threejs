@@ -6,7 +6,7 @@ import * as THREE from 'three';
 
 const scene = new THREE.Scene();
 
-const camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector('#bg'),
@@ -53,12 +53,12 @@ Array(200).fill().forEach(addStar);
 
 // Background
 
-const spaceTexture = new THREE.TextureLoader().load('./images/wall2.jpg');
+const spaceTexture = new THREE.TextureLoader().load('wall2.jpg');
 scene.background = spaceTexture;
 
 // Avatar
 
-const giftTexture = new THREE.TextureLoader().load('./images/gift.jpeg');
+const giftTexture = new THREE.TextureLoader().load('gift.jpeg');
 
 const gift = new THREE.Mesh(
 	new THREE.BoxGeometry(2, 3, 3),
@@ -69,8 +69,8 @@ scene.add(gift);
 
 // Moon
 
-const moonTexture = new THREE.TextureLoader().load('./images/moon.jpg');
-const normalTexture = new THREE.TextureLoader().load('./images/normal.jpg');
+const moonTexture = new THREE.TextureLoader().load('moon.jpg');
+const normalTexture = new THREE.TextureLoader().load('normal.jpg');
 
 const moon = new THREE.Mesh(
   new THREE.SphereGeometry(3, 32, 32),
